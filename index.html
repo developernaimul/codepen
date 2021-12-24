@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Naimul</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- THIS IS HTML -->
+    <div class="learn-with_naimul">
+        <div class="code-run">
+            <label for="html-code" class="lab1">HTML</label>
+            <textarea id="html-code" class="html"></textarea>
+            <label for="css-code" class="lab2">CSS</label>
+            <textarea id="css-code" class="css"></textarea>
+            <label for="js-code" class="lab3">JS</label>
+            <textarea id="js-code" class="js"></textarea>
+        </div>
+        <div class="show-output">
+            <iframe id="output" class="show-o"></iframe>
+        </div>
+    </div>
+
+
+
+    <!-- THIS IS SCRIPT -->
+    <script type="text/javascript">
+        function run() {
+            let htmlcode = document.querySelector(".learn-with_naimul #html-code").value;
+            let csscode = "<Style>"+document.querySelector(".learn-with_naimul #css-code").value+"<Style>";
+            let jscode = document.querySelector(".learn-with_naimul #js-code").value;
+            let output = document.querySelector(".learn-with_naimul #output");
+            // console.log(htmlcode,csscode,jscode,output);
+            output.contentDocument.body.innerHTML = htmlcode+csscode;
+            output.contentwindow.eval(jscode);
+        }
+        document.querySelector(".learn-with_naimul #html-code").addEventListener("keyup",run);
+        document.querySelector(".learn-with_naimul #css-code").addEventListener("keyup",run);
+        document.querySelector(".learn-with_naimul #js-code").addEventListener("keyup",run);
+    </script>
+</body>
+</html>
+
